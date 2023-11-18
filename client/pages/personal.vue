@@ -44,7 +44,7 @@ const sendProduct = () => {
             product_name: product.value,
         },
     });
-    if (data) {
+    if (!error.value) {
         const lastIndex = products.value?.length;
         if (lastIndex !== undefined) products.value?.push(newProd);
     }

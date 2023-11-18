@@ -44,7 +44,6 @@ app.get('/products', async (req: Request, res: Response) => {
 });
 
 // apply auth to protected backend routes
-
 app.post('/products', auth, async (req: Request, res: Response) => {
     console.log('body:', req.body.product_name);
     const { data, error } = await supabase.from('products').insert({ product_name: req.body.product_name });
